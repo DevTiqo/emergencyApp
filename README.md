@@ -1,6 +1,9 @@
 # emergencyApp
 Emergency Management Application Created with flutter
 
+UI only made with Data Models 
+Open Source
+
 
 ![Emergency Animation Demo](assets/demo/Capture.PNG)
 
