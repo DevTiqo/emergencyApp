@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     AnimationController c;
     
     return MaterialApp(
-      title: 'Flutter Emergency App',
+      title: 'Emergency App By Devtiqo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
