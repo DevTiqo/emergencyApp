@@ -9,8 +9,7 @@ import 'package:provider/provider.dart';
 class EmergencyPage extends StatefulWidget {
   final AnimationController animationController;
 
-  const EmergencyPage({Key key, this.animationController})
-      : super(key: key);
+  const EmergencyPage({Key key, this.animationController}) : super(key: key);
   @override
   _EmergencyPageState createState() => _EmergencyPageState();
 }
@@ -57,11 +56,27 @@ class _EmergencyPageState extends State<EmergencyPage>
       '',
     ),
     Category(
-      Color(0xff36E892),
-      Color(0xff33B2B9),
-      'Beauty',
+      Color(0xffF123C4),
+      Color(0xff668CEA),
+      'Appliances',
       'assets/alarm.png',
-      'Severe Pain',
+      'Other (Specify)',
+      '',
+    ),
+    Category(
+      Color(0xffF123C4),
+      Color(0xff668CEA),
+      'Appliances',
+      'assets/alarm.png',
+      'Other (Specify)',
+      '',
+    ),
+    Category(
+      Color(0xffF123C4),
+      Color(0xff668CEA),
+      'Appliances',
+      'assets/alarm.png',
+      'Other (Specify)',
       '',
     ),
     Category(

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class EmergencyView extends StatefulWidget {
@@ -6,9 +5,7 @@ class EmergencyView extends StatefulWidget {
   final Animation mainScreenAnimation;
 
   const EmergencyView(
-      {Key key,
-      this.mainScreenAnimationController,
-      this.mainScreenAnimation})
+      {Key key, this.mainScreenAnimationController, this.mainScreenAnimation})
       : super(key: key);
 
   @override
@@ -116,6 +113,30 @@ class _EmergencyViewState extends State<EmergencyView>
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 15,
+                                            left: 40,
+                                            right: 40,
+                                            bottom: 35),
+                                        child: Image.asset(
+                                          'assets/alarm.png',
+                                          width:
+                                              _emergencyAnimation.value * 0.7,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 15,
+                                            left: 40,
+                                            right: 40,
+                                            bottom: 35),
+                                        child: Image.asset(
+                                          'assets/alarm.png',
+                                          width:
+                                              _emergencyAnimation.value * 0.7,
+                                        ),
+                                      ),
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             top: 15,
