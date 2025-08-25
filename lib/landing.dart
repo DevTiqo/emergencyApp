@@ -1,4 +1,3 @@
-
 import 'package:emergencyApp/notifiers/emergencyNotifier.dart';
 import 'package:emergencyApp/emergency.dart';
 import 'package:emergencyApp/emergencyServiceListView.dart';
@@ -6,26 +5,24 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Landing extends StatefulWidget {
-
-  const Landing({Key key}) : super(key: key);
+  const Landing({Key? key}) : super(key: key);
   @override
   _LandingState createState() => _LandingState();
 }
 
 class _LandingState extends State<Landing> with TickerProviderStateMixin {
-   AnimationController animationController;
+  late AnimationController animationController;
 
-  
-  Animation<double> topBarAnimation;
-  List<Widget> listViews = List<Widget>();
-  EmergencyNotifier emergencyNotifier;
+  late Animation<double> topBarAnimation;
+  List<Widget> listViews = [];
+  late EmergencyNotifier emergencyNotifier;
   var scrollController = ScrollController();
 
   double topBarOpacity = 0.0;
 
   @override
   void initState() {
-      animationController =
+    animationController =
         AnimationController(duration: Duration(milliseconds: 600), vsync: this);
     topBarAnimation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
         parent: animationController,
@@ -201,9 +198,7 @@ class _LandingState extends State<Landing> with TickerProviderStateMixin {
               child: SizedBox(
                 width: AppBar().preferredSize.height,
                 height: AppBar().preferredSize.height,
-                child: Material(
-                  color: Colors.transparent
-                ),
+                child: Material(color: Colors.transparent),
               ),
             ),
           ],

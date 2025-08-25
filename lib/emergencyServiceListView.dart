@@ -1,14 +1,13 @@
-
 import 'package:emergencyApp/notifiers/emergencyNotifier.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class EmergencyServicesListView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const EmergencyServicesListView(
-      {Key key, this.animationController, this.animation})
+      {Key? key, required this.animationController, required this.animation})
       : super(key: key);
 
   @override
@@ -18,7 +17,7 @@ class EmergencyServicesListView extends StatelessWidget {
     List<dynamic> category = [4];
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (context, child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(
@@ -37,7 +36,6 @@ class EmergencyServicesListView extends StatelessWidget {
                         padding: const EdgeInsets.only(
                             left: 24, right: 24, top: 0, bottom: 0),
                         child: Stack(
-                          overflow: Overflow.visible,
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(bottom: 20),
@@ -73,8 +71,8 @@ class EmergencyServicesListView extends StatelessWidget {
                                             child: AspectRatio(
                                               aspectRatio: 1.2,
                                               child: Image.asset(
-                                          'assets/alarm.png',
-                                        ),
+                                                'assets/alarm.png',
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -130,11 +128,10 @@ class EmergencyServicesListView extends StatelessWidget {
                                           padding: const EdgeInsets.all(16.0),
                                           child: Container(
                                             child: Icon(
-                                                    Icons.check_circle,
-                                                    size: 30,
-                                                    color: Colors.green,
-                                                  ),
-                                                
+                                              Icons.check_circle,
+                                              size: 30,
+                                              color: Colors.green,
+                                            ),
                                           ),
                                         ),
                                       ],

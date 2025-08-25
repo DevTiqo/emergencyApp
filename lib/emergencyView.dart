@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class EmergencyView extends StatefulWidget {
   final AnimationController mainScreenAnimationController;
-  final Animation mainScreenAnimation;
+  final Animation<double> mainScreenAnimation;
 
   const EmergencyView(
-      {Key key, this.mainScreenAnimationController, this.mainScreenAnimation})
+      {Key? key,
+      required this.mainScreenAnimationController,
+      required this.mainScreenAnimation})
       : super(key: key);
 
   @override
@@ -14,8 +16,9 @@ class EmergencyView extends StatefulWidget {
 
 class _EmergencyViewState extends State<EmergencyView>
     with TickerProviderStateMixin {
-  Animation _borderAnimation, _emergencyAnimation;
-  AnimationController _borderAnimationController, _emergencyAnimationController;
+  late Animation<double> _borderAnimation, _emergencyAnimation;
+  late AnimationController _borderAnimationController,
+      _emergencyAnimationController;
 
   @override
   void initState() {
@@ -60,7 +63,7 @@ class _EmergencyViewState extends State<EmergencyView>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
         animation: widget.mainScreenAnimationController,
-        builder: (BuildContext context, Widget child) {
+        builder: (context, child) {
           return FadeTransition(
             opacity: widget.mainScreenAnimation,
             child: new Transform(

@@ -4,14 +4,12 @@ import 'package:flutter/cupertino.dart';
 
 class EmergencyNotifier with ChangeNotifier {
   List<Emergency> _emergencyList = [];
-  Emergency _currentEmergency;
+  Emergency? _currentEmergency;
 
   UnmodifiableListView<Emergency> get emergencyList =>
       UnmodifiableListView(_emergencyList);
 
-
-
-  Emergency get currentEmergency => _currentEmergency;
+  Emergency get currentEmergency => _currentEmergency!;
 
   set emergencyList(List<Emergency> emergencyList) {
     _emergencyList = emergencyList;

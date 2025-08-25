@@ -9,19 +9,20 @@ import 'package:provider/provider.dart';
 class EmergencyPage extends StatefulWidget {
   final AnimationController animationController;
 
-  const EmergencyPage({Key key, this.animationController}) : super(key: key);
+  const EmergencyPage({Key? key, required this.animationController})
+      : super(key: key);
   @override
   _EmergencyPageState createState() => _EmergencyPageState();
 }
 
 class _EmergencyPageState extends State<EmergencyPage>
     with TickerProviderStateMixin {
-  Animation<double> animation;
-  List<Category> promo = List<Category>();
-  List<Widget> listViews = List<Widget>();
+  late Animation<double> animation;
+  List<Category> promo = [];
+  List<Widget> listViews = [];
   var scrollController = ScrollController();
   double topBarOpacity = 0.0;
-  Emergency emergency;
+  late Emergency emergency;
   List<Category> emergencyData = [
     Category(
       Color(0xffFCE183),
@@ -92,7 +93,8 @@ class _EmergencyPageState extends State<EmergencyPage>
   @override
   void initState() {
     super.initState();
-    emergency = new Emergency();
+    emergency =
+        new Emergency('', '', '', '', '', 'Pending', null, DateTime.now());
     animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
         parent: widget.animationController,
         curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
@@ -349,9 +351,7 @@ showAlertDialog(
                     flex: 1,
                     child: SizedBox(
                       width: 350.0,
-                      child: RaisedButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0)),
+                      child: ElevatedButton(
                         onPressed: () {
                           FocusScopeNode currentFocus = FocusScope.of(context);
                           if (!currentFocus.hasPrimaryFocus) {
@@ -371,7 +371,6 @@ showAlertDialog(
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
-                        color: Colors.red,
                       ),
                     ),
                   )
@@ -440,24 +439,24 @@ showEmergencyButton(BuildContext context, Animation animation,
 
 class EmergencyDataView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
   final Emergency emergency;
 
   final Category emergencyData;
 
   const EmergencyDataView(
-      {Key key,
-      this.emergencyData,
-      this.animationController,
-      this.emergency,
-      this.animation})
+      {Key? key,
+      required this.emergencyData,
+      required this.animationController,
+      required this.emergency,
+      required this.animation})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (BuildContext context, Widget child) {
+      builder: (context, child) {
         return FadeTransition(
           opacity: animation,
           child: new Transform(
