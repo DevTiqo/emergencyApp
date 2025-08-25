@@ -229,6 +229,7 @@ class _EmergencyPageState extends State<EmergencyPage>
             itemBuilder: (context, index) {
               widget.animationController.forward();
               return EmergencyDataView(
+                key: Key('emergency_item_$index'),
                 emergencyData: emergencyData[index],
                 emergency: emergency,
                 animation: animation,
