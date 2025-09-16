@@ -437,6 +437,7 @@ showEmergencyButton(BuildContext context, Animation animation,
       });
 }
 
+//Data View for Energency
 class EmergencyDataView extends StatelessWidget {
   final AnimationController animationController;
   final Animation<double> animation;
