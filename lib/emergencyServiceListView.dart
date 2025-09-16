@@ -29,6 +29,7 @@ class EmergencyServicesListView extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: category.length,
                 itemBuilder: (context, index) {
+                  //Defining category
                   final categorys = category[index];
                   return Column(
                     children: <Widget>[

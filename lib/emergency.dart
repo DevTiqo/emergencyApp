@@ -17,6 +17,7 @@ class EmergencyPage extends StatefulWidget {
 
 class _EmergencyPageState extends State<EmergencyPage>
     with TickerProviderStateMixin {
+  //widget definitions
   late Animation<double> animation;
   List<Category> promo = [];
   List<Widget> listViews = [];
